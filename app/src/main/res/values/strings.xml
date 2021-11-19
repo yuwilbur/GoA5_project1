@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">toDaMoon_1</string>
+    <string name="responsibilities">
+        <li>Volunteers will assist our staff with direct food distribution across Seattle.</li>\n
+        <li>Volunteering at our distribution locations provides one on one interaction with food bank clients who are in need of weekly food support.</li>\n
+        <li>The main responsibilities include site set up and tear down, food distribution, food sorting, line management and other tasks as assigned.</li>\n
+        <li>Please wear comfortable clothing and closed-toed shoes to your shift as you will be working in a busy site with moving equipment.</li>
+    </string>
+
+    <string name="requirements">
+        <li>For the safety of our staff and other volunteers, we require a background check.</li>\n
+        <li>All volunteers must be 18 years or older and able to lift 20 - 50 lbs.</li>
+    </string>
+</resources>
