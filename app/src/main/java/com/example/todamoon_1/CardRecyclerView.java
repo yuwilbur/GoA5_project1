@@ -72,6 +72,7 @@ public class CardRecyclerView extends RecyclerView.Adapter<CardRecyclerView.View
                     ((ImageView) volunteer.findViewById(R.id.banner)).setImageDrawable(ViewHolder.this.image.getDrawable());
                     ((ImageView) volunteer.findViewById(R.id.logo)).setImageDrawable(ViewHolder.this.image_icon.getDrawable());
                     ((TextView) volunteer.findViewById(R.id.shortDescription)).setText(ViewHolder.this.title.getText());
+                    ((TextView) volunteer.findViewById(R.id.company)).setText(ViewHolder.this.restaurant.getText());
                     ((TextView) volunteer.findViewById(R.id.longDescription)).setText(ViewHolder.this.description);
                     ((TextView) volunteer.findViewById(R.id.location)).setText(ViewHolder.this.location.getText());
                     ((Chip) volunteer.findViewById(R.id.category)).setText(ViewHolder.this.category.getText());
