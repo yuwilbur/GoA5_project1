@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 class ShiftDay {
     String day = "MONDAY";
+
     public ShiftDay(String day) {
         this.day = day;
     }
@@ -26,6 +27,7 @@ class ShiftDay {
 class ShiftTime {
     String title = "Shift 1: Morning";
     String time = "8:30 AM - 11:30 AM";
+
     public ShiftTime(String title, String time) {
         this.title = title;
         this.time = time;
@@ -108,21 +110,21 @@ public class MainActivity extends AppCompatActivity {
         LayoutInflater inflater = (LayoutInflater) getApplicationContext().
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         ArrayList<ShiftDay> shift_days = new ArrayList<>();
-        shift_days.add(new ShiftDay("MONDAY"));
-        shift_days.add(new ShiftDay("WEDNESDAY"));
-        shift_days.add(new ShiftDay("FRIDAY"));
+        shift_days.add(new ShiftDay("Monday"));
+        shift_days.add(new ShiftDay("Wednesday"));
+        shift_days.add(new ShiftDay("Friday"));
         ArrayList<ShiftTime> shift_time = new ArrayList<>();
         shift_time.add(new ShiftTime("Shift 1: Morning", "8:30 AM - 11:30 AM"));
         shift_time.add(new ShiftTime("Shift 2: Afternoon", "2:30 PM - 5:30 PM"));
         shift_time.add(new ShiftTime("Shift 3: Evening", "8:30 PM - 11:30 PM"));
         LinearLayout shift_day_list = findViewById(R.id.shift).findViewById(R.id.shift_day_list);
-        for(int i = 0; i < shift_days.size(); ++i) {
+        for (int i = 0; i < shift_days.size(); ++i) {
             View shift_day_view = inflater.inflate(R.layout.shift_day_list, shift_day_list, false);
             TextView title = shift_day_view.findViewById(R.id.title);
             title.setText(shift_days.get(i).day);
             shift_day_list.addView(shift_day_view);
             LinearLayout shift_time_list = shift_day_view.findViewById(R.id.shift_time_list);
-            for(int j = 0; j < shift_time.size(); ++j) {
+            for (int j = 0; j < shift_time.size(); ++j) {
                 View shift_time_view = inflater.inflate(R.layout.shift_time_list, shift_time_list, false);
                 TextView time_title = shift_time_view.findViewById(R.id.title);
                 time_title.setText(shift_time.get(j).title);

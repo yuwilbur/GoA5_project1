@@ -37,6 +37,7 @@ public class CardRecyclerView extends RecyclerView.Adapter<CardRecyclerView.View
         viewHolder.category.setText(cardDatum.category);
         viewHolder.location.setText(cardDatum.location);
         viewHolder.image_icon.setImageResource(cardDatum.image_icon);
+        viewHolder.description = cardDatum.longDescription;
     }
 
     @Override
@@ -52,6 +53,8 @@ public class CardRecyclerView extends RecyclerView.Adapter<CardRecyclerView.View
         private ImageView image_icon;
         private Chip category;
 
+        private String description;
+
         public ViewHolder(View view) {
             super(view);
             this.title = view.findViewById(R.id.title);
@@ -64,7 +67,15 @@ public class CardRecyclerView extends RecyclerView.Adapter<CardRecyclerView.View
                 @Override
                 public void onClick(View v) {
                     ((MainActivity) context).findViewById(R.id.main).setVisibility(View.GONE);
-                    ((MainActivity) context).findViewById(R.id.volunteer).setVisibility(View.VISIBLE);
+                    View volunteer = ((MainActivity) context).findViewById(R.id.volunteer);
+                    volunteer.setVisibility(View.VISIBLE);
+                    ((ImageView) volunteer.findViewById(R.id.banner)).setImageDrawable(ViewHolder.this.image.getDrawable());
+                    ((ImageView) volunteer.findViewById(R.id.logo)).setImageDrawable(ViewHolder.this.image_icon.getDrawable());
+                    ((TextView) volunteer.findViewById(R.id.shortDescription)).setText(ViewHolder.this.title.getText());
+                    ((TextView) volunteer.findViewById(R.id.longDescription)).setText(ViewHolder.this.description);
+                    ((TextView) volunteer.findViewById(R.id.location)).setText(ViewHolder.this.location.getText());
+                    ((Chip) volunteer.findViewById(R.id.category)).setText(ViewHolder.this.category.getText());
+
                 }
             });
         }

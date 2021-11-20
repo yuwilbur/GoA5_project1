@@ -5,13 +5,18 @@
     android:layout_height="match_parent">
 
     <ScrollView
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/footer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -20,7 +25,7 @@
             <ImageView
                 android:id="@+id/banner"
                 android:layout_width="match_parent"
-                android:layout_height="240dp"
+                android:layout_height="150dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/org1"
                 app:layout_constraintBottom_toTopOf="@id/content"
@@ -32,8 +37,10 @@
                 android:id="@+id/back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@null"
-                android:padding="@dimen/margin"
+                android:layout_marginLeft="@dimen/small_margin"
+                android:layout_marginTop="@dimen/margin"
+                android:background="@drawable/rounded_bg"
+                android:padding="@dimen/small_margin"
                 android:src="@drawable/back"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -41,8 +48,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/content"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="@dimen/margin"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small_margin"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -53,6 +60,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Community"
+                    app:chipCornerRadius="@dimen/community_radius"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="@id/content" />
 
@@ -60,49 +68,70 @@
                     android:id="@+id/shortDescription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/spacing"
+                    android:paddingBottom="@dimen/spacing"
                     android:text="Serving Thanksgiving dinner at ABC Center"
+                    android:textColor="@color/black"
                     android:textSize="24dp"
-                    android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@id/location"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/category" />
 
+                <ImageView
+                    android:id="@+id/location_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/spacing"
+                    android:src="@drawable/location_big_icon"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/shortDescription" />
+
                 <TextView
                     android:id="@+id/location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/spacing"
                     android:paddingTop="@dimen/spacing"
                     android:text="1531 Western Ave P, Seattle, WA 98101"
                     app:layout_constraintBottom_toTopOf="@id/eta_date"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/location_icon"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/shortDescription" />
+
+                <ImageView
+                    android:id="@+id/date_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/spacing"
+                    android:src="@drawable/date_big_icon"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/location_icon" />
 
                 <TextView
                     android:id="@+id/eta_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/spacing"
                     android:paddingTop="@dimen/spacing"
                     android:text="Mon, Nov 15 - Fri, Nov 19"
                     app:layout_constraintBottom_toTopOf="@id/eta_time"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/date_icon"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/location" />
+                    app:layout_constraintTop_toTopOf="@id/date_icon" />
 
                 <TextView
                     android:id="@+id/eta_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/spacing"
                     android:paddingTop="@dimen/spacing"
                     android:text="8:30AM - 3:30PM"
                     app:layout_constraintBottom_toTopOf="@id/divider1"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/date_icon"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/eta_date" />
 
@@ -112,22 +141,50 @@
                     android:layout_height="@dimen/divider"
                     android:layout_marginTop="@dimen/margin"
                     android:layout_marginBottom="@dimen/margin"
-                    android:background="@color/black"
+                    android:background="@color/secondary"
                     app:layout_constraintBottom_toTopOf="@id/company"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/eta_time" />
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:src="@drawable/logo1"
+                    app:layout_constraintBottom_toBottomOf="@id/organizer"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/company" />
 
                 <TextView
                     android:id="@+id/company"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ABC Food Bank"
-                    app:layout_constraintBottom_toTopOf="@id/longDescription"
+                    android:textColor="@color/black"
+                    android:paddingLeft="@dimen/spacing"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/organizer"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/logo"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+                <TextView
+                    android:id="@+id/organizer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Organizer"
+                    android:paddingLeft="@dimen/spacing"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toTopOf="@id/longDescription"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toRightOf="@id/logo"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/company" />
 
                 <TextView
                     android:id="@+id/longDescription"
@@ -135,11 +192,12 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="@dimen/margin"
                     android:text="ABC Food Bank provides free meals anyone in need in the community. We rely heavily on volunteers to help us achieve this."
+                    android:textColor="@color/black"
                     app:layout_constraintBottom_toTopOf="@id/responsibilities_title"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/company" />
+                    app:layout_constraintTop_toBottomOf="@id/organizer" />
 
                 <TextView
                     android:id="@+id/responsibilities_title"
@@ -147,6 +205,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="@dimen/margin"
                     android:text="Responsibilities"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@id/responsibilities"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -160,6 +219,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="@dimen/spacing"
                     android:text="@string/responsibilities"
+                    android:textColor="@color/black"
                     app:layout_constraintBottom_toTopOf="@id/requirements_title"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -172,6 +232,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="@dimen/margin"
                     android:text="Requirements"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@id/requirements"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -185,6 +246,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="@dimen/spacing"
                     android:text="@string/requirements"
+                    android:textColor="@color/black"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
@@ -194,19 +256,30 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/select_shift"
-        android:layout_width="172dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin"
-        android:backgroundTint="@color/main"
-        android:text="Select Shifts"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        app:chipMinHeight="48dp"
-        app:chipStrokeColor="@color/black"
-        app:chipStrokeWidth="@dimen/divider"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/white"
+        android:elevation="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/select_shift"
+            android:layout_width="272dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/main"
+            android:text="Select Shifts"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:chipMinHeight="48dp"
+            app:chipCornerRadius="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

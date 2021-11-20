@@ -27,7 +27,10 @@
                 android:id="@+id/back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@null"
+                android:layout_marginLeft="@dimen/small_margin"
+                android:layout_marginTop="@dimen/margin"
+                android:background="@drawable/rounded_bg"
+                android:padding="@dimen/small_margin"
                 android:src="@drawable/back"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -36,21 +39,22 @@
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="@dimen/margin"
                 android:text="Application"
+                android:textColor="@color/black"
                 android:textSize="24dp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/shift_selected"
+                app:layout_constraintBottom_toBottomOf="@id/back"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/back" />
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/back" />
 
             <TextView
                 android:id="@+id/shift_selected"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="@dimen/spacing"
+                android:paddingTop="@dimen/small_margin"
                 android:text="SHIFT SELECTED"
-                android:textColor="@color/main"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/shift_day_list"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -62,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingTop="@dimen/spacing"
-                android:paddingBottom="@dimen/margin"
+                android:paddingBottom="@dimen/spacing"
                 app:layout_constraintBottom_toTopOf="@id/divider"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -73,7 +77,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Shift 1: Morning"
-                    android:textStyle="bold"
+                    android:textColor="@color/black"
                     app:layout_constraintBottom_toTopOf="@id/shift_time"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -84,6 +88,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="@dimen/spacing"
                     android:text="8:30 AM - 11:30 AM"
+                    android:textColor="@color/black"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/shift_title" />
@@ -93,7 +98,7 @@
                 android:id="@+id/divider"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/divider"
-                android:background="#FF000000"
+                android:background="@color/secondary"
                 app:layout_constraintBottom_toTopOf="@id/contact_information"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -103,10 +108,10 @@
                 android:id="@+id/contact_information"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="@dimen/margin"
-                android:text="CONTACT INFORMATION"
-                android:textColor="@color/main"
                 android:textStyle="bold"
+                android:paddingTop="@dimen/spacing"
+                android:text="CONTACT INFORMATION"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toTopOf="@id/info"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider" />
@@ -125,50 +130,55 @@
                     android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/margin"
-                    android:text="Name"
-                    android:textStyle="bold" />
+                    android:text="Full Name" />
 
                 <EditText
                     android:id="@+id/name_edit"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:paddingTop="@dimen/spacing" />
+                    android:background="@drawable/rounded_edittext"
+                    android:hint="Enter your name"
+                    android:paddingLeft="@dimen/small_margin"
+                    android:paddingRight="@dimen/small_margin" />
 
                 <TextView
                     android:id="@+id/number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="@dimen/margin"
-                    android:text="Phone Number"
-                    android:textStyle="bold" />
+                    android:text="Phone Number" />
 
                 <EditText
                     android:id="@+id/number_edit"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:paddingTop="@dimen/spacing" />
+                    android:background="@drawable/rounded_edittext"
+                    android:hint="Enter your phone number"
+                    android:paddingLeft="@dimen/small_margin"
+                    android:paddingRight="@dimen/small_margin" />
 
                 <TextView
                     android:id="@+id/email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="@dimen/margin"
-                    android:text="Email"
-                    android:textStyle="bold" />
+                    android:text="Email Address" />
 
                 <EditText
                     android:id="@+id/email_edit"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:paddingTop="@dimen/spacing" />
+                    android:background="@drawable/rounded_edittext"
+                    android:hint="Enter your email"
+                    android:paddingLeft="@dimen/small_margin"
+                    android:paddingRight="@dimen/small_margin" />
             </LinearLayout>
 
             <View
                 android:id="@+id/divider_2"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/divider"
-                android:background="#FF000000"
+                android:background="@color/secondary"
                 app:layout_constraintBottom_toTopOf="@id/submit"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -176,14 +186,14 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/submit"
-                android:theme="@style/Theme.MaterialComponents.Light"
                 android:layout_width="match_parent"
                 android:layout_height="72dp"
-                android:textSize="24dp"
                 android:backgroundTint="@color/main"
                 android:text="Submit Application"
                 android:textAlignment="center"
                 android:textColor="@color/white"
+                android:textSize="24dp"
+                android:theme="@style/Theme.MaterialComponents.Light"
                 app:chipMinHeight="36dp"
                 app:chipStrokeColor="@color/black"
                 app:chipStrokeWidth="@dimen/divider"

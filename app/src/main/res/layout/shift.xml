@@ -17,7 +17,6 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="@dimen/margin"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -27,7 +26,10 @@
                 android:id="@+id/back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@null"
+                android:layout_marginLeft="@dimen/small_margin"
+                android:layout_marginTop="@dimen/margin"
+                android:background="@drawable/rounded_bg"
+                android:padding="@dimen/small_margin"
                 android:src="@drawable/back"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -36,23 +38,25 @@
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="@dimen/margin"
                 android:text="Select a shift"
+                android:textColor="@color/black"
                 android:textSize="24dp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/shift_day_list"
+                app:layout_constraintBottom_toBottomOf="@id/back"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/back" />
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/back" />
 
             <LinearLayout
                 android:id="@+id/shift_day_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:orientation="vertical"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/title"
-                android:orientation="vertical" />
+                app:layout_constraintTop_toBottomOf="@id/title" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

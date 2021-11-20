@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:text="MONDAY"
         android:textStyle="bold"
-        android:textColor="@color/main"
+        android:textColor="@color/black"
         android:paddingTop="@dimen/margin"
         app:layout_constraintBottom_toTopOf="@id/shift_time_list"
         app:layout_constraintLeft_toLeftOf="parent"
