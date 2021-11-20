@@ -44,8 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
                 "ABC Food Bank provides free meals anyone in need in the community",
                 "ABC Food Bank provides free meals anyone in need in the community. We rely heavily on volunteers to help us achieve this. If you have any non-perishable food items, please consider donating to ABC Food Bank. Your generosity is greatly appreciated, especially during this time of need.",
+                "Marpole, South Vancouver",
                 "Community",
-                R.drawable.org1));
+                R.drawable.org1,
+                R.drawable.logo1));
         cardData.add(new CardData(
                 "DEF Run for Health",
 
@@ -57,8 +59,21 @@ public class MainActivity extends AppCompatActivity {
                         "If you're not able to run 10k, then you can walk the entire distance. Or a combination of walking and running would work as well. The important thing is to help raise funds for medical research.\n" +
                         "\n" +
                         "If you and a group of friends would like to do the run together, that will work as well.",
+                "Suncrest, Burnaby",
                 "Food",
-                R.drawable.org2));
+                R.drawable.org2,
+                R.drawable.logo2));
+        cardData.add(new CardData(
+                "GHI Homes",
+
+                "GHI Homes helps build homes for families in poverty-stricken locations worldwide",
+                "GHI Homes helps build homes for families in poverty-stricken locations worldwide.\n" +
+                        "\n" +
+                        "Join us for a summer or support us with your donations.",
+                "West Avenue, Seattle",
+                "Shelter",
+                R.drawable.org3,
+                R.drawable.logo3));
         CardRecyclerView cards = new CardRecyclerView(this, cardData);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);

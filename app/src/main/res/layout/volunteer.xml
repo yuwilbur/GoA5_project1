@@ -113,13 +113,13 @@
                     android:layout_marginTop="@dimen/margin"
                     android:layout_marginBottom="@dimen/margin"
                     android:background="@color/black"
-                    app:layout_constraintBottom_toTopOf="@id/restaurant"
+                    app:layout_constraintBottom_toTopOf="@id/company"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/eta_time" />
 
                 <TextView
-                    android:id="@+id/restaurant"
+                    android:id="@+id/company"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ABC Food Bank"
@@ -139,7 +139,7 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/restaurant" />
+                    app:layout_constraintTop_toBottomOf="@id/company" />
 
                 <TextView
                     android:id="@+id/responsibilities_title"
@@ -152,7 +152,7 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/restaurant" />
+                    app:layout_constraintTop_toBottomOf="@id/company" />
 
                 <TextView
                     android:id="@+id/responsibilities"

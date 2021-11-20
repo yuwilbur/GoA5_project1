@@ -1,7 +1,6 @@
 package com.example.todamoon_1;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,9 +32,11 @@ public class CardRecyclerView extends RecyclerView.Adapter<CardRecyclerView.View
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         CardData cardDatum = cardData.get(position);
         viewHolder.title.setText(cardDatum.shortDescription);
-        viewHolder.bg.setImageResource(cardDatum.image);
+        viewHolder.image.setImageResource(cardDatum.image);
         viewHolder.restaurant.setText(cardDatum.restaurant);
         viewHolder.category.setText(cardDatum.category);
+        viewHolder.location.setText(cardDatum.location);
+        viewHolder.image_icon.setImageResource(cardDatum.image_icon);
     }
 
     @Override
@@ -46,14 +47,18 @@ public class CardRecyclerView extends RecyclerView.Adapter<CardRecyclerView.View
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView title;
         private TextView restaurant;
-        private ImageView bg;
+        private TextView location;
+        private ImageView image;
+        private ImageView image_icon;
         private Chip category;
 
         public ViewHolder(View view) {
             super(view);
             this.title = view.findViewById(R.id.title);
-            this.bg = view.findViewById(R.id.entryBg);
-            this.restaurant = view.findViewById(R.id.restaurant);
+            this.image = view.findViewById(R.id.image);
+            this.image_icon = view.findViewById(R.id.company_icon);
+            this.location = view.findViewById(R.id.location);
+            this.restaurant = view.findViewById(R.id.company);
             this.category = view.findViewById(R.id.category);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
