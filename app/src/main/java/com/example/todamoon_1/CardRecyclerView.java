@@ -66,9 +66,7 @@ public class CardRecyclerView extends RecyclerView.Adapter<CardRecyclerView.View
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ((MainActivity) context).findViewById(R.id.main).setVisibility(View.GONE);
-                    View volunteer = ((MainActivity) context).findViewById(R.id.volunteer);
-                    volunteer.setVisibility(View.VISIBLE);
+                    View volunteer = ((MainActivity) context).showView(R.id.volunteer);
                     ((ImageView) volunteer.findViewById(R.id.banner)).setImageDrawable(ViewHolder.this.image.getDrawable());
                     ((ImageView) volunteer.findViewById(R.id.logo)).setImageDrawable(ViewHolder.this.image_icon.getDrawable());
                     ((TextView) volunteer.findViewById(R.id.shortDescription)).setText(ViewHolder.this.title.getText());

@@ -2,6 +2,8 @@ package com.example.todamoon_1;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -22,6 +24,7 @@ public class ThanksDialog extends Dialog implements View.OnClickListener {
         setContentView(R.layout.thanks);
         Button close = findViewById(R.id.close);
         close.setOnClickListener(this);
+        this.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
     }
 
     @Override

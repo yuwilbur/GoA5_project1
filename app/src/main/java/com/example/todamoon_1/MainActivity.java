@@ -1,5 +1,6 @@
 package com.example.todamoon_1;
 
+import androidx.annotation.IdRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import com.google.android.material.chip.Chip;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 class ShiftDay {
     String day = "MONDAY";
@@ -35,6 +37,18 @@ class ShiftTime {
 }
 
 public class MainActivity extends AppCompatActivity {
+
+    final ArrayList<Integer> ids = new ArrayList<>(Arrays.asList(R.id.main, R.id.volunteer, R.id.shift, R.id.application));
+
+    public View showView(@IdRes int id) {
+        for (int i = 0; i < ids.size(); ++i) {
+            findViewById(ids.get(i)).setVisibility(View.GONE);
+        }
+        View view = findViewById(id);
+        view.setVisibility(View.VISIBLE);
+        return view;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,24 +100,21 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.volunteer).findViewById(R.id.back).setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                findViewById(R.id.volunteer).setVisibility(View.GONE);
-                findViewById(R.id.main).setVisibility(View.VISIBLE);
+                showView(R.id.main);
             }
         });
 
         findViewById(R.id.volunteer).findViewById(R.id.select_shift).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                findViewById(R.id.volunteer).setVisibility(View.GONE);
-                findViewById(R.id.shift).setVisibility(View.VISIBLE);
+                showView(R.id.shift);
             }
         });
 
         findViewById(R.id.shift).findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                findViewById(R.id.shift).setVisibility(View.GONE);
-                findViewById(R.id.volunteer).setVisibility(View.VISIBLE);
+                showView(R.id.volunteer);
             }
         });
 
@@ -149,8 +160,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.application).findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                findViewById(R.id.application).setVisibility(View.GONE);
-                findViewById(R.id.shift).setVisibility(View.VISIBLE);
+                showView(R.id.shift);
             }
         });
 
